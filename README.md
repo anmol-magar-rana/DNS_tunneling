@@ -13,7 +13,7 @@ Fake DNS Server (localhost)
   - Parses "query"
   - Extracts encoded data
 
-notes:
-No real DNS
-No usage of udp port 53 (use e.g. 53535)
+notes:   
+No real DNS   
+No usage of udp port 53 (use e.g. 53535)   
 No internet traffic
