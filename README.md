@@ -7,7 +7,7 @@ Client (localhost)
   - Encodes data
   - Wraps it in DNS-like payload
   - Sends via UDP socket
-          ↓
+          
 Fake DNS Server (localhost)
   - Listens on UDP
   - Parses "query"
