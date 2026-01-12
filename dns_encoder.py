@@ -2,14 +2,14 @@
 Important: this is not a malware, everything done is contained within a safe and controlled environment.
 
 This file simulates a malware that:
-Takes sensitive data
+Takes imaginary sensitive data
 Encodes it using Base32
 Exfiltrates it through DNS queries
 
 This is a commonly used method by attackers because:
 DNS traffic is rarely inspected in depth
 Port 53 is almost always allowed
-Works even in locked down networks
+It works even in locked down networks
 """
 
 import base64               # use base32 to ensure all characters are DNS valid
