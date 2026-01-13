@@ -43,4 +43,4 @@ for q in queries:
 
 # reassemble the plaintext
 decoded_data = decode_chunks(received_chunks)
-print("[+] Reconstructed Data:", decoded_data)
+print("Reconstructed Data:", decoded_data)
