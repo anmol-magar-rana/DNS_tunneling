@@ -1,22 +1,8 @@
 # DNS_tunneling
-Exploration of how data can be exfiltrated using DNS tunneling from the attackers side and how to detect them from the defenders side.
+## Important Disclaimer
+This project / home lab is intended strictly for educational security research and defensive detection development. It includes a controlled simulation of DNS tunneling techniques for the purpose of understanding how such activity appears on the network and how it can be detected by SOC analysts.
 
-This project is purely educational. It does not capture, send, or transmit any data. All code execution is local and fully contained within the files themselves.
+The DNS tunneling components are proof-of-concept implementations and are not designed for real-world misuse. They do not include persistence, exploitation, privilege escalation, or command-and-control frameworks beyond basic DNS query generation.
 
-This project contains three .py files:
-
-1) dns_encoder.py (fake infected device)
-- Encodes data
-- Wraps it in DNS-like payload
-- Sends via 'A' record lookup request
-
-2) dns_decoder.py (attacker's fake dns server)          
-- Listens on UDP
-- Parses "query"
-- Extracts encoded data
-
-3) dns_tunnel_detection (SOC SIEM detection rule )
-- Calculates entropy of subdomains
-- Flags any high entropy subdomains
-- Stops any suspicious queries from being sent out of the network
+This project should only be executed in isolated lab environments or against domains you own or are authorized to test. Use of this project is subject to the terms of the included MIT License.
 
