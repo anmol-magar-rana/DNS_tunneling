@@ -1,5 +1,7 @@
 """
-Important: this is not a malware, everything done is contained within a safe and controlled environment.
+Important: this is not a malware, this project is purely educational. 
+It does not capture, send, or transmit any data. 
+All code execution is local and fully contained within the files themselves.
 
 This file simulates a malware that:
 Takes imaginary sensitive data
