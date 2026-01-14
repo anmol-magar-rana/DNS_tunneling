@@ -1,13 +1,22 @@
 """
-Important: this is not a malware, this project is purely educational. 
-It does not capture, send, or transmit any data. 
-All code execution is local and fully contained within the files themselves.
+This file provides a controlled lab simulation of DNS tunneling
+data reconstruction for defensive security research.
 
-This file simulates what the attackes server that receieves the dns query does:
-Extracting encoded data from all queries
-Combine all the encoded data
-Decode using Base32
-Recover the original plaintext
+It demonstrates how an attacker / analyst could:
+- Extract encoded data from observed DNS queries
+- Reassemble fragmented subdomain payloads
+- Restore Base32 padding
+- Decode the original plaintext
+
+This script performs no network activity and does not capture,
+send, intercept, or transmit any real data.
+
+All inputs are hardcoded example values, and execution is fully
+local and self-contained.
+
+This implementation is intentionally simplified and assumes
+ordered input to highlight practical limitations of DNS-based
+exfiltration.
 """
 
 import base64               # base32 decoding used
