@@ -1,8 +1,19 @@
 """
-This file aims to simulate a toy SIEM rule that flags potential DNS tunneling attempts
+This file provides a simplified, offline simulation of a DNS tunneling
+detection technique commonly used in SIEM environments.
 
-The rule implemented here scores DNS queries based on entropy and flags queries that look like encoded data.
-This simulates real logic used in Splunk / Sentinel and other SIEMs
+It demonstrates how DNS queries can be scored using Shannon entropy
+to identify subdomains that resemble encoded or exfiltrated data.
+
+This implementation is intentionally minimal and exists to illustrate
+detection concepts rather than serve as a production-ready rule.
+
+No network activity is performed. All DNS queries are hardcoded
+examples, and execution is fully local and self-contained.
+
+In real SOC environments, entropy-based detection is combined with
+additional signals such as baselining, frequency analysis, domain
+reputation, and protocol behavior.
 """
 
 import math                             # using log2 to calculate entropy
@@ -37,7 +48,7 @@ for query in dns_queries:
     # set value of 4, changable according to risk tolerance
     if entropy > 4:
         print(f"[ALERT] Possible DNS tunneling: {query}")
-        #<quarantine query logic>
+        #<quarantine query logic here>
     else:
         print(f"[OK] {query}")
 
