@@ -9,13 +9,15 @@ This project should only be executed in isolated lab environments or against dom
 ## Overview
 This project provides a controlled lab that demonstrates how DNS tunneling works, why it is fragile for attackers, and how Security Operations Centers can detect it in real environments.
 
-The repository is intentionally split into three small components:
+The repository is intentionally split into four small components:
 
 1. Data Exfiltration Simulation – how attackers abuse trusted DNS infrastructure to exfiltrate sensitive data
 
 2. Data Reconstruction – how tunneled data is recovered and why it can fail
 
 3. Detection Logic – one way how SOCs identify may suspicious DNS behavior
+
+4. Wireshark PCAP - Live packets captured and documented on Wireshark upon carrying out the data exfiltration simulation.
 
 All scripts are designed for educational and defensive research only. Guard rails are implemented in 'DNS Tunneling Traffic Generator (Lab Simulation).py' to prevent accidental misuse, and example domains and data are used throughout.
 
@@ -67,3 +69,7 @@ Insights gained:
     - query length and frequency
     - NXDOMAIN ratios
     - domain reputation
+
+## 4. Wireshark PCAP - Wireshark PCAP.md & Wireshark PCAP.png
+Wireshark PCAP.png shows the screenshot of the captured packets in the network.
+Wireshark PCAP.md goes into a little more details on this.
