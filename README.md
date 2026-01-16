@@ -9,7 +9,7 @@ This project should only be executed in isolated lab environments or against dom
 ## Overview
 This project provides a controlled lab that demonstrates how DNS tunneling works, why it is fragile for attackers, and how Security Operations Centers can detect it in real environments.
 
-The repository is intentionally split into four small components:
+The repository is split into four small components:
 
 1. Data Exfiltration Simulation – how attackers abuse trusted DNS infrastructure to exfiltrate sensitive data
 
@@ -73,3 +73,23 @@ Insights gained:
 ## 4. Wireshark PCAP - Wireshark PCAP.md & Wireshark PCAP.png
 Wireshark PCAP.png shows the screenshot of the captured packets in the network.
 Wireshark PCAP.md goes into a little more details on this.
+
+## MITRE ATT&CK Mapping
+
+This project maps directly to the following MITRE ATT&CK technique:
+
+T1071.004 — Application Layer Protocol: DNS
+
+- DNS is abused as a covert command-and-control or exfiltration channel
+
+- Data is embedded within subdomains to evade traditional controls
+
+- Traffic blends in with legitimate DNS queries
+
+1) DNS Tunneling Traffic Generator (Lab Simulation).py : Simulates attacker DNS-based data exfiltration
+
+2) dns_decoder.py : Demonstrates attacker-side data recovery
+
+3) dns_tunnel_detection.py : Illustrates defensive detection strategies
+
+This lab helps to understand how and why this technique works as well as how it fails.
